@@ -9,7 +9,7 @@ export default (props, railsContext) => {
   const { mainAppState } = initialStates;
   const initialState = {
     $mainAppStore: mainAppState.merge({
-      counter: props.counter,
+      ...props
     }),
     railsContext,
   };
