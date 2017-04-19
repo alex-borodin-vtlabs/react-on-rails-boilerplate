@@ -3,6 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 import Layout from '../layout/Layout';
 import IndexContainer from '../containers/IndexContainer';
 import NotFoundContainer from '../containers/NotFoundContainer';
+import SecondContainer from '../containers/SecondContainer';
 
 export default (
   <Route path="/" component={Layout}>
@@ -11,7 +12,7 @@ export default (
     />
     <Route
       path="/route_example"
-      component={NotFoundContainer}
+      component={SecondContainer}
     />
     <Route path="*" component={NotFoundContainer} />
   </Route>

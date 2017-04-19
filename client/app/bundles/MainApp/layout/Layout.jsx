@@ -24,7 +24,9 @@ export default class Layout extends BaseComponent {
             <li>
               <Link to="/route_example" activeClassName="active">Second Route</Link>
             </li>
-            <a href="/route_example">fefef</a>
+            <li>
+              <Link to="/azazaza" activeClassName="active">Not Found Route</Link>
+            </li>
           </ul>
         </header>
         {this.props.children}

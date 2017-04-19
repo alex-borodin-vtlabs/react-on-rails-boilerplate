@@ -4,7 +4,7 @@ import BaseComponent from './BaseComponent';
 import PropTypes from 'prop-types';
 
 
-export default class IndexComponent extends BaseComponent {
+export default class SecondComponent extends BaseComponent {
 
   static propTypes = {
     actions: PropTypes.object.isRequired,
@@ -12,16 +12,11 @@ export default class IndexComponent extends BaseComponent {
     locationState: PropTypes.object,
   };
 
-  clickExample(e) {
-    e.preventDefault();
-    this.props.actions.example();
-  }
-
   render() {
     const { data, actions } = this.props;
     return (
       <div>
-        <a href="#" onClick={this.clickExample.bind(this)}>{ data.get('counter') }</a>
+        Second Component
       </div>
     );
   }
