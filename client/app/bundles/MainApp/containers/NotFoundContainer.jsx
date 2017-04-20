@@ -10,7 +10,6 @@ import NotFoundComponent from '../components/NotFoundComponent';
 import * as actionCreators from '../actions/mainAppActionCreators';
 
 
-
 function select(state) {
   // Which part of the Redux global state does our component want to receive as props?
   return { data: state.$mainAppStore };

@@ -1,10 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import BaseComponent from './BaseComponent';
-import PropTypes from 'prop-types';
 
 
 export default class IndexComponent extends BaseComponent {
+
+  constructor(props) {
+    super(props);
+
+      // Bind functions
+    this.clickExample = this.clickExample.bind(this);
+  }
 
   static propTypes = {
     actions: PropTypes.object.isRequired,
@@ -18,10 +25,10 @@ export default class IndexComponent extends BaseComponent {
   }
 
   render() {
-    const { data, actions } = this.props;
+    const { data } = this.props;
     return (
       <div>
-        <a href="#" onClick={this.clickExample.bind(this)}>{ data.get('counter') }</a>
+        <button onClick={this.clickExample}>{ data.get('counter') }</button>
       </div>
     );
   }

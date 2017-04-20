@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { IndexLink, Link } from 'react-router';
 import BaseComponent from '../components/BaseComponent';
-import PropTypes from 'prop-types';
 
 
 export default class Layout extends BaseComponent {

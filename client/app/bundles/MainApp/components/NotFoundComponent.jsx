@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import BaseComponent from './BaseComponent';
-import PropTypes from 'prop-types';
 
 
 export default class NotFoundComponent extends BaseComponent {
@@ -13,7 +13,6 @@ export default class NotFoundComponent extends BaseComponent {
   };
 
   render() {
-    const { data, actions } = this.props;
     return (
       <div>
         Page Not Found!
