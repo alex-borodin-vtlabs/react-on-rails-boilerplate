@@ -4,6 +4,7 @@
 
 const webpack = require('webpack');
 const pathLib = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const devBuild = process.env.NODE_ENV !== 'production';
 
@@ -42,6 +43,54 @@ const config = {
         },
       },
       {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true,
+                modules: true,
+                importLoaders: 1,
+                localIdentName: '[name]__[local]__[hash:base64:5]',
+              },
+            },
+            'postcss-loader',
+          ],
+        }),
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          loader: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true,
+                modules: true,
+                importLoaders: 3,
+                localIdentName: '[name]__[local]__[hash:base64:5]',
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: 'autoprefixer'
+              }
+            },
+            'sass-loader',
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: './app/assets/styles/app-variables.scss'
+              },
+            }
+          ],
+        }),
+      },
+      {
         test: /\.jsx?$/,
         use: 'babel-loader',
         exclude: /node_modules/,
@@ -49,6 +98,12 @@ const config = {
     ],
   },
 };
+config.plugins.push(
+  new ExtractTextPlugin({
+    filename: '[name]-bundle.css',
+    allChunks: true
+  })
+);
 
 module.exports = config;
 

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import BaseComponent from './BaseComponent';
+import css from './IndexComponent.scss';
 
 
 export default class IndexComponent extends BaseComponent {
@@ -28,7 +29,7 @@ export default class IndexComponent extends BaseComponent {
     const { data } = this.props;
     return (
       <div>
-        <button onClick={this.clickExample}>{ data.get('counter') }</button>
+        <button className={css.body} onClick={this.clickExample}>{ data.get('counter') }</button>
       </div>
     );
   }
