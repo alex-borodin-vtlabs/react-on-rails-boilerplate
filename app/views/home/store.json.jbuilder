@@ -1,5 +1,7 @@
 json.counter counter
-json.user do
-  json.email user.email
-  json.roles user.roles
+if user
+  json.user do
+    json.email user.email
+    json.roles user.roles
+  end
 end

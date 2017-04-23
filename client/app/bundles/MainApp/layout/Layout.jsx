@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { IndexLink, Link } from 'react-router';
 import BaseComponent from '../components/BaseComponent';
+import css from './Layout.scss';
 
 
 export default class Layout extends BaseComponent {
@@ -13,7 +14,7 @@ export default class Layout extends BaseComponent {
   /* eslint-disable react/no-unescaped-entities */
   render() {
     return (
-      <section>
+      <section className="container">
         <header>
           <ul>
             <li>
