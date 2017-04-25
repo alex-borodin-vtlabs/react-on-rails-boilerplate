@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import $  from 'jquery';
+import $ from 'jquery';
 
 import { EXAMPLE, REQUEST_BEGIN, REQUEST_SUCCESS, REQUEST_ERROR } from '../constants/mainAppConstants';
 

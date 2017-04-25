@@ -15,7 +15,7 @@ export default class NotFoundComponent extends BaseComponent {
   render() {
     return (
       <div>
-        Page Not Found!
+        <h1 className="h1 my-3">Page Not Found!</h1>
       </div>
     );
   }

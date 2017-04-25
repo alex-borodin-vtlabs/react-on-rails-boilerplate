@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'reactstrap';
 
 import BaseComponent from './BaseComponent';
 import css from './IndexComponent.scss';
@@ -27,10 +28,10 @@ export default class IndexComponent extends BaseComponent {
 
   render() {
     const { data } = this.props;
-    console.log(data.get('example'));
     return (
-      <div>
-        <button className={css.body} onClick={this.clickExample}>{ data.get('example').get('counter') }</button>
+      <div className={css.body} >
+        <h1 className="h1 my-3">Root!</h1>
+        <Button color="primary" onClick={this.clickExample}>{ data.get('example').get('counter') }</Button>
       </div>
     );
   }

@@ -15,7 +15,7 @@ export default class SecondComponent extends BaseComponent {
   render() {
     return (
       <div>
-        Second Component
+        <h1 className="h1 my-3">Second!</h1>
       </div>
     );
   }

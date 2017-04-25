@@ -5,7 +5,7 @@ export const initialState = Immutable.fromJS({
   isFetching: false,
   example: {
     counter: 0,
-  }
+  },
 });
 
 export default function commentsReducer(state = initialState, action = null) {
