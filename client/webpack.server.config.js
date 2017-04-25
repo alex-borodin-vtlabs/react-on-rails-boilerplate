@@ -47,38 +47,38 @@ const config = {
         exclude: /node_modules/,
       },
       {
-             test: /\.css$/,
-             use: {
-               loader: 'css-loader/locals',
-               options: {
-                 modules: true,
-                 importLoaders: 0,
-                 localIdentName: '[name]__[local]__[hash:base64:5]'
-               }
-             }
-           },
-           {
-             test: /\.scss$/,
-             use: [
-               {
-                 loader: 'css-loader/locals',
-                 options: {
-                   modules: true,
-                   importLoaders: 2,
-                   localIdentName: '[name]__[local]__[hash:base64:5]',
-                 }
-               },
-               {
-                 loader: 'sass-loader'
-               },
-               {
-                 loader: 'sass-resources-loader',
-                 options: {
-                   resources: './app/assets/styles/app-variables.scss',
-                 },
-               }
-             ],
-           },
+        test: /\.css$/,
+        use: {
+          loader: 'css-loader/locals',
+          options: {
+            modules: true,
+            importLoaders: 0,
+            localIdentName: '[name]__[local]__[hash:base64:5]'
+          }
+        }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'css-loader/locals',
+            options: {
+              modules: true,
+              importLoaders: 2,
+              localIdentName: '[name]__[local]__[hash:base64:5]',
+            }
+          },
+          {
+            loader: 'sass-loader'
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: './app/assets/styles/app-variables.scss',
+            },
+          }
+        ],
+      },
     ],
   },
 };

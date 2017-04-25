@@ -22,14 +22,15 @@ export default class IndexComponent extends BaseComponent {
 
   clickExample(e) {
     e.preventDefault();
-    this.props.actions.example();
+    this.props.actions.callApi('example', 'GET', 'example');
   }
 
   render() {
     const { data } = this.props;
+    console.log(data.get('example'));
     return (
       <div>
-        <button className={css.body} onClick={this.clickExample}>{ data.get('counter') }</button>
+        <button className={css.body} onClick={this.clickExample}>{ data.get('example').get('counter') }</button>
       </div>
     );
   }

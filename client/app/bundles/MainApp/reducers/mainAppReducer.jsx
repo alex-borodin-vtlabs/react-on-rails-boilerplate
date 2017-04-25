@@ -2,16 +2,29 @@ import Immutable from 'immutable';
 import * as actionTypes from '../constants/mainAppConstants';
 
 export const initialState = Immutable.fromJS({
-  counter: 0,
+  isFetching: false,
+  example: {
+    counter: 0,
+  }
 });
 
 export default function commentsReducer(state = initialState, action = null) {
-  const { type } = action;
+  const { type, data, keyword } = action;
   switch (type) {
 
-    case actionTypes.EXAMPLE: {
+    case actionTypes.REQUEST_BEGIN: {
       return state.merge({
-        counter: state.get('counter') + 1,
+        isFetching: true,
+      });
+    }
+
+    case actionTypes.REQUEST_SUCCESS: {
+      return state.set(keyword, Immutable.fromJS(data));
+    }
+
+    case actionTypes.REQUEST_ERROR: {
+      return state.merge({
+        isFetching: false,
       });
     }
 
