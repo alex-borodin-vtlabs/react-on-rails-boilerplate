@@ -2,7 +2,7 @@
 
 Just clone and use server-side rendering, routing, user auth and roles, admin interface, API requests and others.
 
-* Technologies
+## Technologies
 
 See package.json and Gemfile for versions
 
@@ -22,7 +22,7 @@ See package.json and Gemfile for versions
 1. Scss
 1. esLint
 
-* Installation 
+## Installation 
 
 1. Be sure that you have Node installed! We suggest [nvm](https://github.com/creationix/nvm), with node version `v6.0` or above. See this article [Updating and using nvm](http://forum.shakacode.com/t/updating-and-using-nvm/293).
 1. `git clone https://github.com/vacuumtubedriver/react-on-rails-boilerplate.git`
@@ -37,7 +37,7 @@ See package.json and Gemfile for versions
 1. `rake db:setup`
 1. `foreman start -f Procfile.dev`
 
-* How To
+## How To
 
 + **Users**: use standatd Devise registration and login and manage roles in RailsAdmin. Get current user with roles from Redux store:
   ```
@@ -64,5 +64,5 @@ See package.json and Gemfile for versions
       yarn lint
     ```
   
- * Contributors
+ ## Contributors
   [VT Labs](https://vtlabs.org)
