@@ -65,4 +65,4 @@ See package.json and Gemfile for versions
     ```
   
  ## Contributors
-  [VT Labs](https://vtlabs.org)
+  [VT Labs](https://www.vtlabs.org)
