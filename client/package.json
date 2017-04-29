@@ -8,8 +8,10 @@
   },
   "scripts": {
     "build:test": "concurrently --kill-others \"webpack -w --config webpack.client.config.js\" \"webpack -w --config webpack.server.config.js\"",
-    "build:production": "NODE_ENV=production concurrently --kill-others \"webpack -w --config webpack.client.config.js\" \"webpack -w --config webpack.server.config.js\"",
-    "build:development": "concurrently --kill-others \"webpack -w --config webpack.client.config.js\" \"webpack -w --config webpack.server.config.js\"",
+    "build:production:client": "NODE_ENV=production webpack --config webpack.client.config.js",
+    "build:production:server": "NODE_ENV=production webpack --config webpack.server.config.js",
+    "build:development": "NODE_ENV=production concurrently --kill-others \"webpack -w --config webpack.client.config.js --bail\" \"webpack -w --config webpack.server.config.js --bail\"",
+    "build:production": "yarn run build:production:client && yarn run build:production:server",
     "lint": "eslint --fix --ext .js,.jsx ."
   },
   "cacheDirectories": [
