@@ -3,7 +3,6 @@ class Ability
 
   def initialize(user)
     can :read, :all                   # allow everyone to read everything
-    can :manage, :all
     if user
       if user.role? :admin
         can :access, :rails_admin       # only allow admin users to access Rails Admin
